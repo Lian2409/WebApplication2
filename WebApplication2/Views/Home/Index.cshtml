@@ -1,10 +1,76 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "בית הספר שלנו";
 }
-
-<div class="text-center">
-    <h1 class="display-4">ברוכה הבאה ליאן</h1>
-    <p>ChatGPT <a href="https://www.google.com/search?q=chat+gpt&oq=chat&gs_lcrp=EgZjaHJvbWUqDQgAEAAYgwEYsQMYgAQyDQgAEAAYgwEYsQMYgAQyBggBEEUYOTINCAIQABiDARixAxiABDINCAMQABiDARixAxiABDIQCAQQABiDARixAxiABBiKBTIQCAUQABiDARixAxiABBiKBTIKCAYQABixAxiABDINCAcQABiDARixAxiABDIHCAgQABiABNIBCTU5NzlqMGoxNagCALACAA&sourceid=chrome&source=chrome.rb&ie=UTF-8">building Web apps with ASP.NET Core</a>.</p>
-    <p>Claud <a href="https://www.google.com/search?q=cloud+ai&sca_esv=bc930dfb2622f473&ei=I2idarqBKI7MhbIP0KissQ8&biw=1280&bih=593&oq=clo&gs_lp=Egxnd3Mtd2l6LXNlcnAiA2NsbyoCCAAyDRAAGIAEGIoFGEMYsQMyEBAAGIAEGIoFGLEDGIMBGAoyCBAAGIAEGLEDMggQABiABBixAzILEAAYgAQYsQMYgwEyCBAAGIAEGLEDMhAQABiABBiKBRhDGLEDGIMBMgUQABiABDIHEAAYgAQYCjIWEC4YgAQYigUYQxixAxiDARjHARjRA0jHKlDiCFj1GXAGeAGQAQCYAYsBoAH2A6oBAzAuNLgBAcgBAPgBAZgCCqAClQbCAgoQABhHGNYEGLADwgINEAAYgAQYigUYQxiwA8ICDhAAGOQCGNYEGLAD2AEBwgIXEC4Y3AYYuAYY2gYY2AIYyAMYsAPYAQHCAhEQLhiABBixAxiDARjHARjRA8ICChAAGIAEGIoFGEPCAg0QABiABBiKBRixAxgKwgIPEAAYgAQYChgLGLEDGIMBwgIMEAAYgAQYChgLGLEDmAMAiAYBkAYTugYGCAEQARgJkgcDNi40oAezFrIHAzAuNLgHwgTCBwczLTQuNS4xyAfwAYAIAQ&sclient=gws-wiz-serp">building Web apps with ASP.NET Core</a>.</p>
-    <p>Gemini <a href="https://www.google.com/search?q=gemini&sca_esv=bc930dfb2622f473&biw=1280&bih=593&ei=pGidasusO7udhbIPwruaqA4&oq=gemi&gs_lp=Egxnd3Mtd2l6LXNlcnAiBGdlbWkqAggAMggQABiABBixAzINEAAYgAQYigUYQxixAzILEAAYgAQYsQMYgwEyChAAGIAEGIoFGEMyCBAAGIAEGLEDMgsQABiABBixAxiDATIFEAAYgAQyCBAAGIAEGLEDMggQABiABBixAzILEAAYgAQYsQMYgwFIviVQxRBYjxhwB3gBkAEAmAGTAaABugSqAQMwLjS4AQHIAQD4AQGYAgugAsgGwgIKEAAYRxjWBBiwA8ICDRAAGIAEGIoFGEMYsAPCAhcQLhjcBhi4BhjaBhjYAhjIAxiwA9gBAcICEBAAGIAEGIoFGEMYsQMYgwHCAhYQLhiABBiKBRhDGLEDGIMBGMcBGNEDwgIOEAAYgAQYigUYjQYYsQOYAwCIBgGQBhK6BgYIARABGBmSBwM3LjSgB9UVsgcDMC40uAf8BMIHBzMtNS41LjHIB-sBgAgB&sclient=gws-wiz-serp">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-4">
+    <h1 class="text-center mb-4">מערכת ניהול בית ספר</h1>
+    <h2>תלמידים</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>מספר תלמיד</th>
+            <th>שם פרטי</th>
+            <th>שם משפחה</th>
+            <th>כיתה</th>
+        </tr>
+        @foreach (var student in ViewBag.Students)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.GradeLevel1</td>
+            </tr>
+        }
+    </table>
+    <h2>מורים</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>מספר מורה</th>
+            <th>שם פרטי</th>
+            <th>שם משפחה</th>
+            <th>מקצוע</th>
+        </tr>
+        @foreach (var teacher in ViewBag.Teachers)
+        {
+            <tr>
+                <td>@teacher.Id</td>
+                <td>@teacher.FirstName</td>
+                <td>@teacher.LastName</td>
+                <td>@teacher.Subject</td>
+            </tr>
+        }
+    </table>
+    <h2>קורסים</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>מספר קורס</th>
+            <th>שם הקורס</th>
+            <th>מספר מורה</th>
+        </tr>
+        @foreach (var course in ViewBag.Courses)
+        {
+            <tr>
+                <td>@course.Id</td>
+                <td>@course.Name</td>
+                <td>@course.TeacherId</td>
+            </tr>
+        }
+    </table>
+    <h2>הרשמות לקורסים</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>מספר הרשמה</th>
+            <th>מספר תלמיד</th>
+            <th>מספר קורס</th>
+            <th>ציון</th>
+        </tr>
+        @foreach (var enrollment in ViewBag.Enrollments)
+        {
+            <tr>
+                <td>@enrollment.Id</td>
+                <td>@enrollment.StudentId</td>
+                <td>@enrollment.CourseId</td>
+                <td>@enrollment.Grade</td>
+            </tr>
+        }
+    </table>
 </div>

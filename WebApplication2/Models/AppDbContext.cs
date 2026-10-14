@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApplication2.Models;
-
-namespace YourProjectName.Models
+namespace WebApplication2.Models
 {
     public class AppDbContext : DbContext
     {
@@ -11,5 +9,8 @@ namespace YourProjectName.Models
         }
 
         public DbSet<Students> Students { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
     }
 }

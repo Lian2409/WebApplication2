@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using WebApplication2.Models;
-using YourProjectName.Models;
 
 namespace WebApplication2
 {
