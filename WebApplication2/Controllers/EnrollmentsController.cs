@@ -30,7 +30,7 @@ namespace WebApplication2.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return NotFound(); 
             }
 
             var enrollment = await _context.Enrollments
