@@ -16,7 +16,7 @@ namespace WebApplication2.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.0")
+                .HasAnnotation("ProductVersion", "9.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -69,6 +69,31 @@ namespace WebApplication2.Migrations
                     b.ToTable("Enrollments");
                 });
 
+            modelBuilder.Entity("WebApplication2.Models.School", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Schools");
+                });
+
             modelBuilder.Entity("WebApplication2.Models.Students", b =>
                 {
                     b.Property<int>("Id")
@@ -88,7 +113,12 @@ namespace WebApplication2.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("SchoolId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("SchoolId");
 
                     b.ToTable("Students");
                 });
@@ -146,6 +176,20 @@ namespace WebApplication2.Migrations
                     b.Navigation("Course");
 
                     b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("WebApplication2.Models.Students", b =>
+                {
+                    b.HasOne("WebApplication2.Models.School", "School")
+                        .WithMany("Students")
+                        .HasForeignKey("SchoolId");
+
+                    b.Navigation("School");
+                });
+
+            modelBuilder.Entity("WebApplication2.Models.School", b =>
+                {
+                    b.Navigation("Students");
                 });
 #pragma warning restore 612, 618
         }

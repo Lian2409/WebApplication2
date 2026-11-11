@@ -39,7 +39,7 @@ namespace WebApplication2.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (enrollment == null)
             {
-                return NotFound();
+                return NotFound(); 
             }
 
             return View(enrollment);

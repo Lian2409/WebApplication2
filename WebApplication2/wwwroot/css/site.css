@@ -29,3 +29,126 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* כרטיס פרטי בית הספר */
+.parent-card {
+    background-color: #e3efff;
+    border: 2px solid #3985e8;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+    .parent-card h2 {
+        color: #1d3557;
+        border-bottom: 2px solid #3985e8;
+        padding-bottom: 10px;
+    }
+
+/* סידור פרטי בית הספר */
+.parent-fields {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+    .parent-fields p {
+        color: #333;
+        font-size: 16px;
+    }
+
+/* אזור התלמידים */
+.children-section {
+    background-color: #f5f7fa;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+    .children-section h3 {
+        color: #1d3557;
+        margin-bottom: 15px;
+    }
+
+/* מספר התלמידים */
+.count-badge {
+    background-color: #3985e8;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* טבלת התלמידים */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+    .data-table th {
+        background-color: #1d3557;
+        color: white;
+        text-align: right;
+        padding: 12px;
+    }
+
+    .data-table td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .data-table tr:nth-child(even) {
+        background-color: #edf2f7;
+    }
+
+    .data-table tr:hover {
+        background-color: #dceaff;
+    }
+
+/* כפתור הצגת תלמידים */
+.btn-details {
+    display: inline-block;
+    background-color: #3985e8;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    .btn-details:hover {
+        background-color: #1d3557;
+        color: white;
+    }
+
+/* הודעה כשאין תלמידים */
+.empty-message {
+    color: #777;
+    font-style: italic;
+    background-color: #eeeeee;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 600px) {
+    .parent-fields {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .parent-card,
+    .children-section {
+        padding: 12px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 7px;
+        font-size: 13px;
+    }
+}

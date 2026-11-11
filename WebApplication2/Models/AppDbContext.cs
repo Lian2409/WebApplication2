@@ -12,5 +12,7 @@ namespace WebApplication2.Models
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
+
+        public DbSet<School> Schools { get; set; }
     }
 }

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication2.Models.School>
+
+@{
+    ViewData["Title"] = "בתי ספר";
+}
+
+<h1>רשימת בתי הספר</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">הוסף בית ספר חדש</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>שם בית הספר</th>
+            <th>עיר</th>
+            <th>טלפון</th>
+            <th>הצגת תלמידים</th>
+            <th>פעולות</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.City)</td>
+                <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+
+                <td>
+                    <a asp-action="WithStudents"
+                       asp-route-id="@item.Id"
+                       class="btn-details">
+                        הצג תלמידים
+                    </a>
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">עריכה</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">פרטים</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">מחיקה</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <p class="empty-message">עדיין לא נוספו בתי ספר.</p>
+}

@@ -1,0 +1,50 @@
+﻿@model WebApplication2.Models.School
+
+@{
+    ViewData["Title"] = "פרטי בית הספר";
+}
+
+<div class="parent-card">
+    <h2>@Model.Name</h2>
+    <div class="parent-fields">
+        <p><strong>עיר:</strong> @Model.City</p>
+        <p><strong>טלפון:</strong> @Model.Phone</p>
+    </div>
+</div>
+
+<div class="children-section">
+    <h3>תלמידים</h3>
+
+    <div class="count-badge">
+        מספר התלמידים: @Model.Students.Count
+    </div>
+
+    @if (Model.Students.Any())
+    {
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>שם פרטי</th>
+                    <th>שם משפחה</th>
+                    <th>כיתה</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model.Students)
+                {
+                    <tr>
+                        <td>@student.FirstName</td>
+                        <td>@student.LastName</td>
+                        <td>@student.GradeLevel1</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="empty-message">אין תלמידים המשויכים לבית הספר הזה.</p>
+    }
+</div>
+
+<a asp-action="Index" class="btn btn-primary">חזרה לרשימת בתי הספר</a>
