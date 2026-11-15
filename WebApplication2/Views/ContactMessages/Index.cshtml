@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApplication2.Models.ContactMessage>
+
+@{
+    ViewData["Title"] = "רשימת פניות";
+}
+
+<h1>רשימת הפניות</h1>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        יצירת פנייה חדשה
+    </a>
+</p>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>שם מלא</th>
+                <th>אימייל</th>
+                <th>נושא</th>
+                <th>תוכן ההודעה</th>
+                <th>תאריך הפנייה</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.Subject</td>
+                    <td>@item.Message</td>
+                    <td>@item.CreatedAt.ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="empty-message">עדיין לא התקבלו פניות.</p>
+}

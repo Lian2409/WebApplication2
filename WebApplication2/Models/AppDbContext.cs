@@ -14,5 +14,6 @@ namespace WebApplication2.Models
         public DbSet<Enrollment> Enrollments { get; set; }
 
         public DbSet<School> Schools { get; set; }
+        public DbSet<ContactMessage> ContactMessages { get; set; }
     }
 }

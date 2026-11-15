@@ -152,3 +152,90 @@ body {
         font-size: 13px;
     }
 }
+
+/* עיצוב כללי לטופס */
+form {
+    background-color: #f4f7fb;
+    padding: 25px;
+    border: 1px solid #d5dfeb;
+    border-radius: 15px;
+    max-width: 650px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* כותרת הטופס */
+h1 {
+    color: #1d3557;
+    margin-bottom: 20px;
+}
+
+/* שדות הטופס */
+.form-group {
+    margin-bottom: 18px;
+}
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 7px;
+        color: #263b55;
+    }
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b8c7d9;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+    /* צבע מסגרת בזמן בחירת שדה */
+    .form-control:focus {
+        border: 2px solid #3985e8;
+        outline: none;
+        box-shadow: 0 0 5px rgba(57,133,232,0.3);
+    }
+
+/* הודעות שגיאה */
+.text-danger {
+    color: #d62828;
+    font-size: 14px;
+}
+
+/* כפתור שליחת הטופס */
+form button {
+    background-color: #3985e8;
+    color: white;
+    padding: 11px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    form button:hover {
+        background-color: #1d3557;
+    }
+
+/* הודעת הצלחה */
+.alert-success {
+    background-color: #d8f3dc;
+    color: #216b37;
+    border: 1px solid #95d5a5;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .form-control {
+        font-size: 16px;
+    }
+}
