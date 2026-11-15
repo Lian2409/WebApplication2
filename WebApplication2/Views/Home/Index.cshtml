@@ -3,6 +3,7 @@
 }
 <div class="container mt-4">
     <h1 class="text-center mb-4">מערכת ניהול בית ספר</h1>
+
     <h2>תלמידים</h2>
     <table class="table table-bordered">
         <tr>
@@ -21,6 +22,7 @@
             </tr>
         }
     </table>
+
     <h2>מורים</h2>
     <table class="table table-bordered">
         <tr>
@@ -39,6 +41,7 @@
             </tr>
         }
     </table>
+
     <h2>קורסים</h2>
     <table class="table table-bordered">
         <tr>
@@ -55,6 +58,7 @@
             </tr>
         }
     </table>
+
     <h2>הרשמות לקורסים</h2>
     <table class="table table-bordered">
         <tr>
@@ -74,6 +78,10 @@
         }
     </table>
 
+    <hr />
+
+    <h2>ניהול המערכת</h2>
+
     <p>
         <a class="btn btn-primary" asp-controller="Students" asp-action="Index">תלמידים</a>
     </p>
@@ -85,5 +93,8 @@
     </p>
     <p>
         <a class="btn btn-primary" asp-controller="Enrollments" asp-action="Index">הרשמות לקורסים</a>
-    </p> 
+    </p>
+    <p>
+        <a class="btn btn-primary" asp-controller="Schools" asp-action="Index">בתי ספר</a>
+    </p>
 </div>

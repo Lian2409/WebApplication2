@@ -239,3 +239,42 @@ form button {
         font-size: 16px;
     }
 }
+
+/* עיצוב טבלאות מערכת בית הספר */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 35px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+    .table th {
+        background-color: #1d3557;
+        color: white;
+        padding: 14px;
+        text-align: right;
+    }
+
+    .table td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #edf2f7;
+    }
+
+    .table tbody tr:hover {
+        background-color: #dceaff;
+    }
+
+h2 {
+    color: #1d3557;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3985e8;
+    padding-bottom: 8px;
+}
